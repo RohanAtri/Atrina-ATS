@@ -1,0 +1,68 @@
+<div class="bulk-container">
+    <div class="bulk-inner">
+        <div class="upload">
+            <button (click)="triggerFileInput()"><img src="../../../assets/cloud.png" alt="Upload"></button>
+            <input type="file" #fileInput style="display: none;" (change)="onFilesChange($event)"
+                accept="application/pdf" multiple>
+
+        </div>
+        <div class="chat">
+            <div class="chat-box">
+                <div class="inner-box">
+                    <div *ngIf="chatHistory.length">
+                        <div *ngFor="let chat of chatHistory" class="history">
+                            <p class="question"><strong>Q:</strong> {{ chat.question | truncate:40 }}</p>
+                            <pre><strong>A:</strong> {{ chat.answer }}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chat-input">
+                <div class="input-container">
+                    <input type="text" placeholder="Start Typing Here!..." class="text-input" [(ngModel)]="question" />
+                    <button class="send-button" (click)="askQuestion()">
+                        ➤
+                    </button>
+                </div>
+                <div class="dashboard">
+                    <button (click)="dashboard()">Dashboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="loading" class="spinner">
+    <mat-spinner></mat-spinner>
+</div>
+
+<ng-template #callAPIDialog>
+    <h2 mat-dialog-title>Dashboard</h2>
+    <mat-dialog-content>
+        <table>
+            <tr>
+              <th>No. </th>
+              <th>Name</th>
+              <th>Phone No.</th>
+              <th>Email</th>
+              <th>Skills</th>
+              <th>Language</th>
+              <th>Experience</th>
+              <th>ATS Score</th>
+            </tr>
+            <tr *ngFor="let candidate of candidates;let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{candidate?.name}}</td>
+              <td>{{candidate?.phone}}</td>
+              <td>{{candidate?.email}}</td>
+              <td>{{candidate?.skills}}</td>
+              <td>{{candidate?.languages}}</td>
+              <td>{{candidate?.experience}}</td>
+              <td>{{candidate?.atsScore}}</td>
+            </tr>
+          </table>
+    </mat-dialog-content>
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancle</button>
+    </mat-dialog-actions>
+</ng-template>

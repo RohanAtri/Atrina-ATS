@@ -1,0 +1,122 @@
+.bulk-container {
+    height: 100%;
+    width: 100%;
+    padding: 6px 10px 10px 10px;
+
+    .bulk-inner {
+        border: 2px solid black;
+        width: 100%;
+        height: 100%;
+
+        .upload {
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                background: none;
+                outline: none;
+                border: none;
+                cursor: pointer;
+
+                img {
+                    width: 100px;
+                    height: 80px;
+                }
+            }
+        }
+
+        .chat {
+            height: 85%;
+
+            .chat-box {
+                height: 90%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                .inner-box {
+                    width: 100%;
+                    height: 100%;
+                    color: Black;
+                    overflow-y: auto;
+
+                    .history {
+                        padding: 0 50px;
+                        font-size: 20px;
+
+                        pre {
+                            text-wrap: auto;
+                        }
+
+                        .question {
+                            color: red;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+
+            .chat-input {
+                height: 10%;
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                width: 100%;
+
+                .input-container {
+                    display: flex;
+                    align-items: center;
+                    border: 1px solid #79747E;
+                    border-radius: 5px;
+                    padding: 6px 16px;
+                    width: 75%;
+
+                    .text-input {
+                        flex: 1;
+                        border: none;
+                        outline: none;
+                        padding: 3px;
+                        font-size: 16px;
+                    }
+
+                    .send-button {
+                        background: none;
+                        border: none;
+                        padding: 0;
+                        margin-left: 10px;
+                        cursor: pointer;
+                        color: black;
+                        font-size: 25px;
+                    }
+                }
+                .dashboard {
+                    button {
+                        padding: 10px 20px;
+                        border: 1px solid black;
+                        background-color: white;
+                        color: black;
+                        font-size: 15px;
+                    }
+                    button:hover {
+                        background-color: black;
+                        color: white;
+                    }
+                }
+
+            }
+        }
+    }
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }

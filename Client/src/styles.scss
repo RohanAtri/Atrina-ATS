@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: math;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: black;
+    border-radius: 20px;
+  }
+
+  .spinner {
+    position: absolute;
+      left: 50%;
+      top: 50%;
+      z-index: 1000;
+  }
+  
+
+
